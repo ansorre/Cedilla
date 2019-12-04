@@ -57,22 +57,22 @@ Open source templating engine for Java with the power of JavaScript. Incredibly 
  
     § importFrom(".../path/to/external/file...", {also: "pass", what: "some keysValues", and: "Be very Happy! :-))"});
    
-  Cedilla is also configurable, you don't like "§" and "|"? No problem provide you own: 
+  Cedilla is also configurable, you don't like "§" and "|"? No problem, provide you own: 
 
     String res=Cedilla.render( 
         new Configuration()
         {{
           delimiter="%";
           multilineCodeDelimiters=new String[]{"%|", "|%"};
-         expressionDelimiters=new String[]{"%=", "%"};
-            internalVarPrefix="ȼ";
+          expressionDelimiters=new String[]{"%=", "%"};
+          internalVarPrefix="ȼ";
         }},
-        "Hello, %what!", toValuesProvider(new String[]{"what", "World"}), null);
+        "Hello, %what!", Cedilla.toValuesProvider(new String[]{"what", "World"}), null);
 
     System.out.println(res); // Hello, World!
 
 
-Cedilla can also be used without paramters, since you can create stuff inside the template itself:
+Cedilla can also be used without parameters, since you can create stuff inside the template itself:
 
     String res=Cedilla.render(
         "§ var lastPetalIsHeLovesMe=Math.random()>=0.5; §§= "+
