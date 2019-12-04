@@ -27,15 +27,15 @@ Open source templating engine for Java with the power of JavaScript. Incredibly 
  
     § var foo="I'm it!"; §This is foo: §foo
  
-  the multiline way is possibile too, instead of § ...javascript... § you just go with §| ...javascript... |§
+  the multiline way is possibile too, instead of § &lt;javascript&gt; § you just go with §| &lt;javascript&gt; |§
  
     §| 
      var createdHere=
              'This is made now!';
  
-    |§ this is the content made now: §createdHere
+    |§this is the content made now: §createdHere
  
-  expressions are easy too, you include them in §= ...expression... §:
+  expressions are easy too, you include them in §= &lt;expression&gt; §:
  
     This is more then foo: §= foo+" and some more" §!
  
