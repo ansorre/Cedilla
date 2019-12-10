@@ -8,7 +8,7 @@ Open source templating engine for Java with the power of JavaScript. Incredibly 
  * templates are fully scriptable, uses the Java builtin JavaScript engine
  * Apache 2.0 license
 
-## How-tos
+## How-Tos
    
   To insert the content of a variable: 
         
@@ -21,13 +21,13 @@ Open source templating engine for Java with the power of JavaScript. Incredibly 
 
   to execute some javascript inside the template (one line way):
  
-    § var foo="foo"; // the rest till the enf of line is javascript
+    § var foo="foo"; // this is JavaScript till the enf of line
  
   another one line way:
  
     § var foo="I'm it!"; §This is foo: §foo
  
-  the multiline way is possibile too, instead of § &lt;javascript&gt; § you just go with §| &lt;javascript&gt; |§
+  the multi-line way is possibile too, instead of § &lt;javascript&gt; § you just go with §| &lt;javascript&gt; |§
  
     §| 
      var createdHere=
@@ -57,7 +57,7 @@ Open source templating engine for Java with the power of JavaScript. Incredibly 
  
     § importFrom(".../path/to/external/file...", {also: "pass", what: "some keysValues", and: "Be very Happy! :-))"});
    
-  Cedilla is also configurable, you don't like "§" and "|"? No problem, provide you own: 
+  Cedilla is also configurable, you don't like "§" and "|"? No problem, provide your own: 
 
     String res=Cedilla.render( 
         new Configuration()
@@ -83,7 +83,7 @@ Cedilla can also be used without parameters, since you can create stuff inside t
     System.out.println(res); 
     // sometimes 'He loves me! 😍', sometimes 'He loves me not! 😭'
 
-Cedilla can be used for whatever kind of files you want, probably even for binary files (not tested). 
+Cedilla can be used for whatever kind of file you want, probably even for binary files (not tested). 
 
 
 
