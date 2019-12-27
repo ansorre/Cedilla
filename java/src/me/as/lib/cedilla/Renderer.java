@@ -17,12 +17,15 @@
 package me.as.lib.cedilla;
 
 
+import jdk.nashorn.api.scripting.JSObject;
+import jdk.nashorn.api.scripting.ScriptObjectMirror;
 import me.as.lib.core.StillUnimplemented;
 import me.as.lib.core.extra.JavaScriptExtras;
 import me.as.lib.core.lang.ArrayExtras;
 import me.as.lib.core.lang.StringExtras;
 
 import javax.script.ScriptEngine;
+import java.net.DatagramSocket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,17 +83,39 @@ class Renderer
   expDelStartLen=configuration.expressionDelimiters[0].length();
   expDelEndLen=configuration.expressionDelimiters[1].length();
 
+  JSObject global=(JSObject)scriptEngine.get("global");
+  if (global==null)
+  {
+   global=(JSObject)_i_eval("new Object();");
+   scriptEngine.put("global", global);
+  }
+
   if (helper!=null) functions=new Functions(this);
 
   if (do_addKeyValues)
   {
    for (String key : keyValues.getKeys())
    {
-    scriptEngine.put(key, keyValues.getValueFor(key));
+    Object value=keyValues.getValueFor(key);
+
+    scriptEngine.put(key, value);
+    global.setMember(key, value);
    }
   }
 
   render();
+ }
+
+ private Object _i_eval(String code)
+ {
+  try
+  {
+   return scriptEngine.eval(code);
+  }
+  catch (Throwable tr)
+  {
+   throw new RuntimeException(tr);
+  }
  }
 
 
@@ -266,7 +291,7 @@ class Renderer
   }
   else
   {
-   throw new StillUnimplemented("At the moment Cedilla can render only string templates");
+   throw new StillUnimplemented("At the moment Cedilla can render only string assets");
   }
  }
 

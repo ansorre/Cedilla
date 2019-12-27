@@ -17,7 +17,6 @@
 package me.as.lib.cedilla;
 
 
-
 public class Functions
 {
  Renderer owner;
