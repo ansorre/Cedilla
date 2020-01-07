@@ -86,6 +86,11 @@ Cedilla can also be used without parameters, since you can create stuff inside t
 Cedilla can be used for whatever kind of file you want, probably even for binary files (not tested). 
 
 
+ 
+## Feel like sponsoring this project?  
+**Compliments, it's a very good idea. 🤗**    
+You can do so right here: [Sponsor @ansorre on GitHub sponsors](https://github.com/sponsors/ansorre)  
+Why it's a good idea? Read [here](https://ansorre.github.io/sponsor/).    
 
 
  
