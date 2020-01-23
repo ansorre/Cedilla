@@ -6,7 +6,7 @@ Open source templating engine for Java with the power of JavaScript. Incredibly 
 
  * just one dependency, get it here: [As-Libs-Core](https://github.com/ansorre/As-Libs-Core)   
  * templates are fully scriptable, uses the Java builtin JavaScript engine
- * Apache 2.0 license
+ * Apache License 2.0
 
 ## How-Tos
    

@@ -495,12 +495,9 @@ class Renderer
 
     case text:
     {
-//     if (StringUtil.hasSolidChars(cp.string))
-//     {
-      String varName=configuration.internalVarPrefix+(internalVarsCount++);
-      scriptEngine.put(varName, cp.string);
-      code.append("write(").append(varName).append(");");
-//     }
+     String varName=configuration.internalVarPrefix+(internalVarsCount++);
+     scriptEngine.put(varName, cp.string);
+     code.append("write(").append(varName).append(");");
     } break;
    }
   }
